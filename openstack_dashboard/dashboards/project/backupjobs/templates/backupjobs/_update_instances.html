@@ -1,0 +1,36 @@
+{% load i18n %}
+
+<noscript><h3>{{ step }}</h3></noscript>
+<table class="table-fixed" id="VMInstancesSortContainer">
+  <tbody>
+    <tr>
+      <td class="actions">
+        <h4 id="selected_instances_h4">{% trans "Selected Instances" %}</h4>
+        <ul id="selected_instances" class="instancelist">
+        </ul>
+        <h4>{% trans "Available instances" %}</h4>
+        <ul id="available_instances" class="instancelist">
+        </ul>
+      </td>
+      <td class="help_text">
+          {% include "project/backupjobs/_create_instances_help.html" %}
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<table class="table-fixed" id="instancesIdContainer">
+  <tbody>
+    <tr>
+      <td class="actions">
+          <div id="instanceId">
+            {% include "horizon/common/_form_fields.html" %}
+          </div>
+      </td>
+      <td class="help_text">
+          {{ step.get_help_text }}
+      </td>
+    </tr>
+  </tbody>
+</table>
+_

@@ -1,0 +1,12 @@
+{% load i18n sizeformat %}
+
+<h3>{% trans "BackupJob Overview" %}</h3>
+
+<div class="info detail">
+  <dl>
+    <dt>{% trans "Name" %}</dt>
+    <dd>{{ backupjob.name|default:"None" }}</dd>
+    <dt>{% trans "ID" %}</dt>
+    <dd>{{ backupjob.id|default:"None" }}</dd>
+  </dl>
+</div>

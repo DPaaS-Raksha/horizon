@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% block title %}{% trans "BackupJob Detail"%}{% endblock %}
+
+{% block page_header %}
+  {% include "horizon/common/_page_header.html" with title=_("BackupJob Detail: ")|add:backupjob.name %}
+{% endblock page_header %}
+
+{% block main %}
+  {% include "project/backupjobs/_detail_overview.html" %}
+  <hr>
+  <div id="backupjobruns">
+    {{ backupjobruns_table.render }}
+  </div>
+{% endblock %}

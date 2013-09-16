@@ -1,0 +1,17 @@
+{% load i18n sizeformat %}
+
+<h3>{% trans "BackupJobRun Overview" %}</h3>
+
+<div class="info row-fluid detail">
+  <h4>{% trans "BackupJobRun" %}</h4>
+  <hr class="header_rule">
+  <dl>
+    <dt>{% trans "Name" %}</dt>
+    <dd>{{ backupjobrun.name|default:"None" }}</dd>
+    <dt>{% trans "ID" %}</dt>
+    <dd>{{ backupjobrun.id|default:"None" }}</dd>
+    {% url horizon:project:backupjobs:detail backupjobrun.backupjob_id as backupjob_url %}
+    <dt>{% trans "BackupJob ID" %}</dt>
+    <dd><a href="{{ backupjob_url }}">{{ backupjobrun.backupjob_id|default:"None" }}</a></dd>
+  </dl>
+</div>
